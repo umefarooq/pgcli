@@ -42,12 +42,12 @@ If you already know how to install python packages, then you can simply do:
 
 ::
 
-    $ pip install -U pgcli
+    pip install -U pgcli
 
     or
 
-    $ sudo apt-get install pgcli # Only on Debian based Linux (e.g. Ubuntu, Mint, etc)
-    $ brew install pgcli  # Only on macOS
+    sudo apt-get install pgcli # Only on Debian based Linux (e.g. Ubuntu, Mint, etc)
+    brew install pgcli  # Only on macOS
 
 If you don't know how to install python packages, please check the
 `detailed instructions`_.
@@ -59,25 +59,25 @@ Usage
 
 ::
 
-    $ pgcli [database_name]
+    pgcli [database_name]
 
     or
 
-    $ pgcli postgresql://[user[:password]@][netloc][:port][/dbname][?extra=value[&other=other-value]]
+    pgcli postgresql://[user[:password]@][netloc][:port][/dbname][?extra=value[&other=other-value]]
 
 Examples:
 
 ::
 
-    $ pgcli local_database
+    pgcli local_database
 
-    $ pgcli postgres://amjith:pa$$w0rd@example.com:5432/app_db?sslmode=verify-ca&sslrootcert=/myrootcert
+    pgcli postgres://amjith:pa$$w0rd@example.com:5432/app_db?sslmode=verify-ca&sslrootcert=/myrootcert
 
 For more details:
 
 ::
 
-    $ pgcli --help
+    pgcli --help
 
     Usage: pgcli [OPTIONS] [DBNAME] [USERNAME]
 
@@ -172,7 +172,7 @@ The easiest way to install pgcli is using Homebrew.
 
 ::
 
-    $ brew install pgcli
+    brew install pgcli
 
 Done!
 
@@ -184,28 +184,28 @@ In depth getting started guide for ``pip`` - https://pip.pypa.io/en/latest/insta
 
 ::
 
-    $ which pip
+    which pip
 
 If it is installed then you can do:
 
 ::
 
-    $ pip install pgcli
+    pip install pgcli
 
 If that fails due to permission issues, you might need to run the command with
 sudo permissions.
 
 ::
 
-    $ sudo pip install pgcli
+    sudo pip install pgcli
 
 If pip is not installed check if easy_install is available on the system.
 
 ::
 
-    $ which easy_install
+    which easy_install
 
-    $ sudo easy_install pgcli
+    sudo easy_install pgcli
 
 Linux:
 ======
@@ -222,13 +222,13 @@ Run:
 
 ::
 
-    $ pipx install pgcli
+    pipx install pgcli
 
 to install ``pgcli`` with ``pipx``, or run:
 
 ::
 
-    $ uvx pgcli
+    uvx pgcli
 
 to run ``pgcli`` by installing on the fly with ``uvx``.
 
@@ -242,13 +242,13 @@ To build the image:
 
 ::
 
-    $ docker build -t pgcli .
+    docker build -t pgcli .
 
 To create a container from the image:
 
 ::
 
-    $ docker run --rm -ti pgcli pgcli <ARGS>
+    docker run --rm -ti pgcli pgcli <ARGS>
 
 To access postgresql databases listening on localhost, make sure to run the
 docker in "host net mode". E.g. to access a database called "foo" on the
@@ -256,14 +256,14 @@ postgresql server running on localhost:5432 (the standard port):
 
 ::
 
-    $ docker run --rm -ti --net host pgcli pgcli -h localhost foo
+    docker run --rm -ti --net host pgcli pgcli -h localhost foo
 
 To connect to a locally running instance over a unix socket, bind the socket to
 the docker container:
 
 ::
 
-    $ docker run --rm -ti -v /var/run/postgres:/var/run/postgres pgcli pgcli foo
+    docker run --rm -ti -v /var/run/postgres:/var/run/postgres pgcli pgcli foo
 
 
 IPython
@@ -277,13 +277,13 @@ Assuming you have IPython installed:
 
 ::
 
-    $ pip install ipython-sql
+    pip install ipython-sql
 
 After that, run ipython and load the ``pgcli.magic`` extension:
 
 ::
 
-    $ ipython
+    ipython
 
     In [1]: %load_ext pgcli.magic
 
